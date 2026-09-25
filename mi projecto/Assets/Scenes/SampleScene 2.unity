@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 583598397}
   - component: {fileID: 583598396}
   - component: {fileID: 583598403}
+  - component: {fileID: 583598404}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -587,7 +588,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 1.11
+  m_StepOffset: 1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -603,6 +604,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649da95a0c863945aa25a8a8f7f3676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drinkInput:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b6160184-31a5-42d3-a08c-20693f507c02
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   moveVector: {x: 0, y: 0}
 --- !u!114 &583598398
 MonoBehaviour:
@@ -618,7 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotationSpeed: 10
-  gravity: -9.81
+  gravity: -9.081
 --- !u!136 &583598399
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -725,6 +735,18 @@ MonoBehaviour:
   health: 0
   stamina: 0
   power: 0
+--- !u!114 &583598404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583598395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0a2a2e5ad8bea46853b644810533f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077399213
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,7 +2910,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.8
+  m_fontSize: 32.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
