@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
 
     // Almacena las variables de la distancia a la que para el enemigo con respecto al jugador.
     public float stoppingDistancePlayer;
+    Animator animator;
 
 
     private void Start()
@@ -42,6 +43,7 @@ public class EnemyAI : MonoBehaviour
 
         // Se cambia el punto de destino para que el enemigo se mueva
         NextPoint();
+        animator = GetComponent<Animator>();
     }
 
     private void NextPoint()
@@ -65,6 +67,7 @@ public class EnemyAI : MonoBehaviour
 
     private void EnemyMovement()
     {
+        animator.SetFloat("Speed",navMeshAgent.speed);
         // Se valida si la variable de EnemyAggro es verdadera, para que el enemigo se mueva a la posici�n del jugador
         // Si es falsa el enemigo mantiene su posici�n
         if (enemyAggro.isAggro)
@@ -82,7 +85,6 @@ public class EnemyAI : MonoBehaviour
             {
                 NextPoint();
             }
-               
         }
     }
 

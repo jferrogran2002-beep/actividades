@@ -7,6 +7,7 @@ public class EnemyAggro : MonoBehaviour
     public bool isAggro;
     public float distanceToAggro;
     [HideInInspector] public Transform playerTransform;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class EnemyAggro : MonoBehaviour
             playerTransform = FindAnyObjectByType<PlayerMovement>().transform;
         }
         isAggro = false;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class EnemyAggro : MonoBehaviour
     }
     public void CheckEnemyAggro()
     {
+        animator.SetBool("isAttacking", isAggro);
     var dis = Vector3.Distance(transform.position, playerTransform.position);
         if (dis > distanceToAggro)
         {
@@ -36,6 +39,7 @@ public class EnemyAggro : MonoBehaviour
     }
     public void EnemyDamage()
     {
+        playerTransform.GetComponent<PlayerStats>().PlayerDamage();
         Debug.Log("La vida del jugador reduce a " + playerTransform.GetComponent<PlayerStats>().health);
     }
 }

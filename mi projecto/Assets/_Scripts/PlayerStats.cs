@@ -51,7 +51,6 @@ public class PlayerStats : MonoBehaviour
         if (health > 1)
         {
             health--;
-            Debug.Log(health);
         }
         else if (health == 1)
         {
